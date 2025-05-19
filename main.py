@@ -4,11 +4,11 @@ root = Tk()
 
 root ['bg'] = '#fafafa'
 root.title('Кафе мороженного')
-root.geometry('1280x720')
+root.geometry('350x200')
 root.resizable(width = False, height = False)
 
 
-canvas = Canvas(root, height=1280, width=720)
+canvas = Canvas(root, height=350, width=200)
 canvas.pack()
 
 frame = Frame(root, bg = '#fafafa', bd = 5)
@@ -47,6 +47,11 @@ Ice1.flavors = ['Шоколадное','Ванильное','фруктовый 
 def btn_click():
     str_fl = str(Ice1.flavors)
     messagebox.showinfo(title='ассортимент', message= str_fl)
+def btn_click1():
+    str_desc = f'Название ресторана : {Ice1.restaurant_name} \n Тип кухни: {Ice1.cuisine_type}'
+    messagebox.showinfo(title='информация',message=str_desc)
+btn1 = Button(frame, text='Показать информацию', bg='purple', command= btn_click1)
+btn1.pack()
 btn = Button(frame, text = 'Узнать ассортимент', bg = 'white', command= btn_click)
 btn.pack()
 
